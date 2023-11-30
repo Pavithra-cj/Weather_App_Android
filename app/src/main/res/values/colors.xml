@@ -3,4 +3,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="background_color">#F3E9FE</color>
+    <color name="greyWhite">#C3C1C1</color>
+    <color name="violet">#AB8EDF</color>
+    <color name="darkViolet">#9170D5</color>
+    <color name="gold">#E6AC02</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="back">#5F4C83</color>
+    <color name="radius1">#65533D7E</color>
+    <color name="radius2">#A1584A70</color>
 </resources>

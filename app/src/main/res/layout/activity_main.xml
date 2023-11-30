@@ -12,22 +12,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textSize="40sp"
+        android:textSize="30sp"
+        android:textStyle="bold"
         android:text="Weather Update"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical">
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-        </View>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/etCity"
+            android:layout_marginTop="@dimen/_20sdp"
             android:layout_marginBottom="10dp"
             android:ems="10"
             android:hint="Enter City Name"
@@ -45,19 +42,126 @@
             android:layout_height="wrap_content"
             android:id="@+id/btnGet"
             android:layout_marginBottom="10dp"
-            android:background="#0070c7"
+            android:background="@drawable/background_button"
             android:textColor="@android:color/white"
             android:onClick="getWeatherDetails"
-            android:text="Get"
+            android:text="Search"
             app:backgroundTint="@null" />
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="150dp">
+        <LinearLayout
+            android:layout_width="@dimen/_210sdp"
+            android:layout_height="@dimen/_240sdp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/radius_weather">
+
             <TextView
+                android:id="@+id/city"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_15ssp"
+                android:text="Info"
+                android:textColor="@color/white"/>
+            <ImageView
+                android:contentDescription="@string/description"
+                android:id="@+id/image"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_130sdp"
+                android:src="@color/transparent" />
+            <LinearLayout
+                android:id="@+id/tekst2"
+                android:layout_below="@id/image"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/tvResult" />
-        </ScrollView>
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/infoMain"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_15ssp"
+                    android:text="Info"
+                    android:textColor="@color/white"/>
+                <TextView
+                    android:id="@+id/degreeMain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Degree"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_30ssp"
+                    android:textColor="@color/white"/>
+                <TextView
+                    android:id="@+id/seaGroundLevel"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_10ssp"
+                    android:text="sea ground level"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+
+        </LinearLayout>
+        <TableLayout
+            android:id="@+id/tablica"
+            android:layout_width="@dimen/_280sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/radius">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_20sdp">
+                    <ImageView
+                        android:contentDescription="@string/description"
+                        style="@style/verticalImage"
+                        android:src="@drawable/barometer" />
+                    <TextView
+                        android:id="@+id/barometerMain"
+                        style="@style/verticalText.bold"
+                        android:text="22%" />
+                    <TextView
+                        style="@style/verticalText.small"
+                        android:text="@string/rain"/>
+                </LinearLayout>
+                <LinearLayout
+                    style="@style/verticalLinearLayout">
+                    <ImageView
+                        android:contentDescription="@string/description"
+                        style="@style/verticalImage"
+                        android:src="@drawable/wind" />
+                    <TextView
+                        android:id="@+id/windMain"
+                        style="@style/verticalText.bold"
+                        android:text="12km/h" />
+                    <TextView
+                        style="@style/verticalText.small"
+                        android:text="wind speed"/>
+                </LinearLayout>
+                <LinearLayout
+                    style="@style/verticalLinearLayout">
+                    <ImageView
+                        android:contentDescription="@string/description"
+                        style="@style/verticalImage"
+                        android:src="@drawable/humidity" />
+                    <TextView
+                        android:id="@+id/humidityMain"
+                        style="@style/verticalText.bold"
+                        android:text="18%" />
+                    <TextView
+                        style="@style/verticalText.small"
+                        android:text="humidity"/>
+                </LinearLayout>
+            </TableRow>
+        </TableLayout>
         <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
